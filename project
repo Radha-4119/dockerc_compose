@@ -1,0 +1,200 @@
+    1  yum install docker -y && systemctl start docker
+    2  sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    3  ls /usr/local/bin/
+    4  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    5  sudo chmod +x /usr/local/bin/docker-compose
+    6  docker-compose version
+    7  vim docker-compose.yml
+    8  docker-compose up -d
+    9  docekr ps
+   10  docker ps
+   11  vim docker-compose.yml 
+   12  docker-compose up -d
+   13  vim docker-compose.yml 
+   14  docker-compose up -d
+   15  docker ps
+   16  vim docker-compose.yml 
+   17  docker-compose down
+   18  docker ps -a
+   19  rm -rf docker-compose.yml 
+   20  ll
+   21  vim compose.yml
+   22  docker-compose up -d
+   23  docker ps
+   24  mkdir paytm
+   25  cd paytm/
+   26  mkdir mobile movie trrain
+   27  ll
+   28  cd mobile/
+   29  vim index.html
+   30  vim Dockerfiles
+   31  ll
+   32  vim Dockerfile
+   33  cd ..
+   34  ll
+   35  cp mobile/* movie
+   36  cd movie/
+   37  ll
+   38  vim index.html 
+   39  cd ..
+   40  cp mobile/* trrain/
+   41  cd trrain/
+   42  ll
+   43  vim index.html 
+   44  cd ..
+   45  ll
+   46  cd mobile/
+   47  vim Dockerfile 
+   48  cd ..
+   49  cd movie/
+   50  vim Dockerfile 
+   51  cd ..
+   52  ll
+   53  cd trrain/
+   54  vim Dockerfile 
+   55  cd ..
+   56  ll
+   57  docker build -t mobile mobile/
+   58  docker build -t movie movie/
+   59  docker build -t trrain trrain/
+   60  docker images
+   61  vim docker-compose.yml
+   62  docker-compose up -d
+   63  vim docker-compose.yml
+   64  docker-compose up -d
+   65  docker ps
+   66  docker kill 481c6fbfc087 c368340911aa
+   67  docker rm c368340911aa 481c6fbfc087
+   68  docker ps -a
+   69  ll
+   70  vim mobile/index.html 
+   71  docker build -t mobile mobile/
+   72  docker-compose up -d
+   73  vim mobile/
+   74  ll
+   75  cd mobile
+   76  ll
+   77  vim index.html 
+   78  docker build -t mobile mobile/
+   79  cd ..
+   80  docker build -t mobile mobile/
+   81  docker-compose up -d
+   82  vim docker-compose.yml 
+   83  vim movie/index.html 
+   84  vim mobile/index.html 
+   85  vim trrain/index.html 
+   86  ll
+   87  docker-compose build
+   88  vim docker-compose.yml 
+   89  docker-compose up -d
+   90  docker images
+   91  docker ps
+   92  docker-compose down
+   93  ll
+   94  docker-compose build
+   95  docker ps
+   96  docker-compose up -d
+   97  docker ps
+   98  ll
+   99  docker-compose down
+  100  vim docker-compose.yml 
+  101  docker-compose up -d
+  102  vim docker-compose.yml 
+  103  docker-compose up -d
+  104  vim docker-compose.yml 
+  105  docker-compose up -d
+  106  vim docker-compose.yml 
+  107  docker-compose up -d
+  108  docker ps
+  109  docker exec -it movie-container
+  110  docker exec -it movie-container bash
+  111  vim docker-compose.yml 
+  112  docker network ls
+  113  docker-compose down
+  114  vim docker-compose.yml 
+  115  docker network ls
+  116  docker-compose up -d
+  117  docker ps
+  118  docker inspect trrain-container
+  119  docker-compose down
+  120  cd
+  121  ll
+  122  yum install git -y
+  123  git clone https://github.com/Radha-4119/nginx-reverse-proxy.git
+  124  ll
+  125  cd nginx-reverse-proxy/
+  126  ll
+  127  git checkout master
+  128  cd
+  129  git clone https://github.com/Radha-4119/nginx-reverse-proxy.git
+  130  ll
+  131  cd nginx-reverse-proxy/
+  132  branch checkout master
+  133  cd
+  134  rm -rf nginx-reverse-proxy/
+  135  ll
+  136  git clone https://github.com/Radha-4119/nginx-reverse-proxy.git
+  137  ll
+  138  cd nginx-reverse-proxy/
+  139  ll
+  140  branch checkout master
+  141  git checkout master
+  142  ll
+  143  rm -rf Dockerfile 
+  144  ll
+  145  cd bank
+  146  cat index.html 
+  147  vim Dockerfile 
+  148  ll
+  149  cd ..
+  150  cd nginx/
+  151  ll
+  152  vim Dockerfile 
+  153  vim nginx.conf 
+  154  cd ..
+  155  vim docker-compose.yml 
+  156  docker-compose up -d
+  157  docker ps
+  158  ll
+  159  cd
+  160  git clone https://github.com/Radha-4119/docker-webapp.git
+  161  cd docker-webapp/
+  162  branch checkout master
+  163  ll
+  164  git checkout master
+  165  ll
+  166  rm -rf Docker-web/ ansible/ compose/ helm/ kubernetes/
+  167  ll
+  168  cd Docker-app/
+  169  ll
+  170  rm -rf multistage/
+  171  ll
+  172  vim Dockerfile 
+  173  ll
+  174  docker build -t myapp .
+  175  cd ..
+  176  ll
+  177  yum install java-1.8.0-openjdk maven -y
+  178  mvn clean package
+  179  ll
+  180  cd target/
+  181  ll
+  182  cd ..
+  183  cp -r target/ Docker-app/
+  184  ll
+  185  cd Docker-app/
+  186  ll
+  187  vim Dockerfile 
+  188  docker build -t myapp .
+  189  cd ..
+  190  ll
+  191  cd Docker-db/
+  192  ll
+  193  vim db_backup.sql 
+  194  vim Dockerfile 
+  195  docker build -t database .
+  196  docker run -d --name devopsdb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=devopspassword database
+  197  docker ps
+  198  docker run --name devopsapp --link devopsdb:mysqlcon -d -p 8081:8080 myapp
+  199  docker ps
+  200  ll
